@@ -9,6 +9,7 @@ import { useNavigate } from "react-router-dom";
 
 function Home() {
     const navigate = useNavigate()
+    let isAdmin = localStorage.getItem('authKey') ? true : false;
   const [trains, setTrains] = useState([]);
   const [isTrainDetailModalOpen, setIsTrainDetailModalOpen] = useState(false);
   const [currentTrainData, setCurrentTrainData] = useState({});
@@ -48,7 +49,15 @@ function Home() {
         handleClose={handleTrainDetailModalClose}
         handleOpen={handleTrainDetailModalOpen}
       />
-      <Box sx={{ marginTop: "50px", marginLeft: "120px",display:"flex", flexDirection:"row",justifyContent:"space-evenly" }}>
+      <Box
+        sx={{
+          marginTop: "50px",
+          marginLeft: "120px",
+          display: "flex",
+          flexDirection: "row",
+          justifyContent: "space-evenly",
+        }}
+      >
         <Button
           variant="contained"
           color="primary"
@@ -56,13 +65,16 @@ function Home() {
         >
           Check Seat Availability
         </Button>
-        <Button
-          variant="contained"
-          color="primary"
-          onClick={() => navigate("/add-train")}
-        >
-          Add Train
-        </Button>
+        {isAdmin && (
+          <Button
+            variant="contained"
+            color="primary"
+            onClick={() => navigate("/add-train")}
+          >
+            Add Train
+          </Button>
+        )}
+
         <Button
           variant="contained"
           color="primary"

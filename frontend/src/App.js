@@ -1,5 +1,6 @@
 import {
   BrowserRouter,
+  Navigate,
   Route,
   Routes,
 } from "react-router-dom";
@@ -13,7 +14,7 @@ import BookingDetails from "./pages/BookingDetails";
 
 function App() {
 
-  
+   let isAdmin = localStorage.getItem("authKey") ? true : false;
 
   return (
     <div className="App">
@@ -23,7 +24,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/check-seat" element={<CheckSeat />} />
-          <Route path="/add-train" element={<AddTrain />} />
+          <Route path="/add-train" element={isAdmin ? <AddTrain /> : <Navigate to={'/'}/>} />
           <Route path="/check-booking-details" element={<BookingDetails />} />
         </Routes>
       </BrowserRouter>
