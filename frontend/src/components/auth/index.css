@@ -1,0 +1,9 @@
+#mainComp {
+  transform: translateY(100px);
+}
+.logo{
+  width: 50px;
+}
+.logoText{
+  font-size: 50px;
+}

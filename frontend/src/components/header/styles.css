@@ -1,0 +1,76 @@
+.logo {
+  width: 50px;
+  height: 50px;
+  margin-left: 50px;
+}
+
+.logoText {
+  font-size: 25px;
+  background-image: linear-gradient(45deg, #6e48aa, #9d50bb);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-background-clip: text;
+  -moz-text-fill-color: transparent;
+  text-align: center;
+  font-family: merriweather;
+  font-style: italic;
+  font-weight: 700;
+  margin-top: 13px;
+  margin-left: 10px;
+}
+
+@media only screen and (max-width: 500px) {
+  .logoText {
+    font-size: 18px;
+  }
+}
+
+.logoutButton {
+  color: #fff;
+  border: none;
+  outline: none;
+  padding: 5px;
+  font-family: merriweather;
+  background-color: #6e48aa;
+  cursor: pointer;
+  border-radius: 5px;
+  box-shadow: 1px 1px 8px;
+  font-size: 13px;
+  box-shadow: #808080 3px 3px 5px;
+  /* display: none; */
+}
+.logoutButton:hover {
+  background-color: #ec6f66;
+}
+
+.link {
+  color: #808080;
+  text-decoration: none;
+}
+.link:hover {
+  color: white;
+}
+
+@media only screen and (max-width: 900px) {
+  .logo {
+    width: 60px;
+    height: 60px;
+    margin-left: 40px;
+  }
+}
+@media only screen and (max-width: 620px) {
+  .logo {
+    width: 55px;
+    height: 55px;
+    margin-left: 10px;
+  }
+
+}
+@media only screen and (max-width: 540px) {
+  .logo {
+    width: 50px;
+    height: 50px;
+    margin-left: 10px;
+  }
+
+}
